@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+</head>
+<body>
+    <h1>Simple Todo App</h1>
+    
+    <form action="/add_todo" method="POST">
+        <label for="name">Todo Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Add</button>
+    </form>
+    
+    <h2>Current Todos:</h2>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
