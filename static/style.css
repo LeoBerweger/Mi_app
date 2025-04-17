@@ -1,3 +1,10 @@
-h1{
-    color: aqua;
+
+html,body{
+    padding: 0;
+}
+
+#entrada{
+    background-color: gray;
+    height: 700px;
+    width: 100%;
 }
