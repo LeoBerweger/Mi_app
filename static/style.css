@@ -1,14 +1,53 @@
 html,body{
     padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 
 #entrada{
-    background-color: gray;
-    height: 700px;
+    background-image: url(fotos/foto_inicio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1000px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    padding-top: 20px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#barra{
+    background-color:whitesmoke;
+    height: 70px;
+    width: 95%;
+    border-radius: 30px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+#bloque-texto{
+    background-color: rgba(245, 245, 245, 0.8);
+    height: 200px;
+    width: 95%;
+    border-radius: 30px;
+    margin: 300px auto 0;
+    position: relative;
+    z-index: 2;
 }
