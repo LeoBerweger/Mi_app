@@ -21,7 +21,7 @@ body {
   /* filter toggle */
   .btn-group .btn {
     flex: 1;
-    border-radius: 0;
+    border-radius: 0; /* Keep square edges inside group */
   }
   .btn-group .btn:first-child {
     border-top-left-radius: 8px;
@@ -32,18 +32,48 @@ body {
     border-bottom-right-radius: 8px;
   }
   
+  /* Ensure active filter state is visually distinct */
+  .btn-group > .btn.active {
+    z-index: 1; /* Ensure active button is on top */
+    /* Bootstrap handles the background/color change */
+  }
+  
+  
   /* list items */
   .list-group-item {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 8px;
+    /* Ensure smooth transition for opacity change */
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    /* Prevent content from overflowing */
+    overflow: hidden;
   }
   
-  /* checkbox styling (circle) */
-  .form-check-input {
-    width: 1.25em;
-    height: 1.25em;
-    border-radius: 50%;
-    border: 2px solid #4a4a4a;
+  /* Style for the task name span */
+  .task-name {
+    /* Allows text to wrap if it's very long */
+    word-break: break-word;
+    /* Add some padding to separate from buttons */
+    padding-right: 10px;
+    /* Ensure it aligns nicely with buttons */
+    flex-grow: 1; /* Allow name to take available space */
+    align-self: center; /* Vertically center if needed */
   }
   
+  /* Style for completed tasks */
+  .list-group-item.completed-task {
+    opacity: 0.65; /* Adjust value between 0.0 (invisible) and 1.0 (fully opaque) */
+    /* Optional: Add a subtle background */
+    /* background-color: #f8f9fa; */
+  }
+  
+  /* Ensure buttons don't wrap unnecessarily */
+  .list-group-item .d-flex {
+    flex-shrink: 0; /* Prevent button container from shrinking */
+  }
+  
+  /* Optional: Add hover effect to list items */
+  .list-group-item:hover {
+      background-color: #f8f9fa;
+  }  
